@@ -1,0 +1,8 @@
+import os
+import pickle
+
+from langchain_community.document_loaders import PyPDFLoader
+from langchain_text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.vectorstores import FAISS
+
+import config
