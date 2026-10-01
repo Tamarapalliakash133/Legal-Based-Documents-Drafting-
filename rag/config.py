@@ -29,6 +29,8 @@ MULTI_QUERY_COUNT = 3
 REDIS_URL = os.getenv(REDIS_URL,"redis://localhost:6379/0")
 REDIS_CACHE_TTL_SECONDS = 60 * 60 * 24
 
+MONGODB_URL = os.getenv(MONGODB_URL,"mongodb://localhost:27017/")
+
 if not OPENAI_API_KEY:
     raise EnvironmentError(
         "OPENAI_API_KEY is not set sorry for interruption we will solve very soon"
