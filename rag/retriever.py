@@ -40,3 +40,42 @@ def load_hybrid_retriever():
     })
 
     return hybrid
+
+def add_reranking(base_retriever):
+    cross_encoder = HuggingFaceCrossEncoder(model_name = config.RERANKER_MODEL)
+    compressor = CrossEncoderReranker(model = cross_encoder,top_n = config.TOP_K_AFTER_RERANK)
+    reranked = ContextualCompressionRetriever(
+        base_compressor = compressor,
+        base_retriever = base_retriever
+    )
+
+    collection.insert_one({
+        "reranking" : "cross_encoder attached",
+        "top_k" : config.TOP_K_AFTER_RERANK
+    })
+
+    return reranked
+
+def add_multi_query(base_retriever,llm : ChatOpenAI):
+    '''
+    its expands the query and the create multiple queries like that and related to that
+    '''
+    mq_retriever = MultiQueryRetriever.from_llm(
+        retriever = base_retriever,
+        llm = llm
+    )
+
+    collection.insert_one({
+        "multiquery" : "langchain-multiquery attched",
+        "no_of_queries" : config.MULTI_QUERY_COUNT
+    })
+
+    return mq_retriever
+
+def build_retriever(llm : ChatOpenAI):
+    hybrid = load_hybrid_retriever()
+    reranked = add_reranking(hybrid)
+    expanded = add_multi_query(reranked,llm)
+
+    return expanded
+
