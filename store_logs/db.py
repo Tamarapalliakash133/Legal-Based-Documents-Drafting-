@@ -1,7 +1,7 @@
 from pymongo import MongoClient
-from config import MONGODB_URL
+import rag.config as config
 
-client = MongoClient(MONGODB_URL)
+client = MongoClient(config.MONGODB_URL)
 
 try:
     db = client["store_logs"]

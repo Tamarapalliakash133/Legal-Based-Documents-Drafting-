@@ -2,10 +2,10 @@ import os
 import pickle
 
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 
-import config
+import rag.config as config
 from store_logs.db import collection
 from rag.cache_file import get_cached_embeddings
 
@@ -31,7 +31,7 @@ def load_and_chunk(pdf_path:str):
     splitter = RecursiveCharacterTextSplitter(
         chunk_size = config.CHUNK_SIZE,
         chunk_overlap = config.CHUNK_OVERLAP,
-        seperator = ["\n\n","\n","."," ",""]
+        separators = ["\n\n","\n","."," ",""]
     )
 
     chunks = splitter.split_documents(pages)
@@ -42,10 +42,11 @@ def load_and_chunk(pdf_path:str):
         "chunk_size" : config.CHUNK_SIZE,
         "chunk_overlap" : config.CHUNK_OVERLAP
     })
+    return chunks
 
 
 def build_index(force_rebuild : bool = False):
-    os.mkdirs(config.STORE_DIR,is_exists = True)
+    os.makedirs(config.STORE_DIR,exist_ok = True)
 
     if (not force_rebuild
         and os.path.exists(config.FAISS_DIR)
@@ -74,3 +75,5 @@ def build_index(force_rebuild : bool = False):
 
 if __name__ == "__main__":
     build_index(force_rebuild = True)
+
+

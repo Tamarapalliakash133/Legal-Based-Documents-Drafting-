@@ -8,16 +8,16 @@ from langchain_community.cross_encoders import HuggingFaceCrossEncoder
 from langchain_classic.retrievers.multi_query import MultiQueryRetriever
 from langchain_openai import ChatOpenAI
 
-import config
-from cache_file import get_cached_embeddings
-from store_logs import collection
+import rag.config as config
+from rag.cache_file import get_cached_embeddings
+from store_logs.db import collection
 
 
 def load_hybrid_retriever():
     embeddings = get_cached_embeddings()
 
     vector_store = FAISS.load_local(
-        config.FAISS_DIR,embeddings
+        config.FAISS_DIR,embeddings,allow_dangerous_deserialization=True
     )
     semantic_retriever = vector_store.as_retriever(search_kwargs = {"k": config.TOP_K_SEMANTIC})
 

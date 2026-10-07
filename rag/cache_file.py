@@ -1,9 +1,9 @@
 import redis
-import config
+import rag.config as config
 from langchain_redis import RedisCache
 from langchain_community.storage import RedisStore
-from langchain_classic.embeddings import CachedBackedEmbeddings
-from langchain import OpenAIEmbeddings
+from langchain_classic.embeddings import CacheBackedEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain_core.globals import set_llm_cache
 from store_logs.db import collection
 
@@ -47,7 +47,7 @@ def get_cached_embeddings():
             namespace = "embed_cache"
         )
 
-        cached_embeddings = CachedBackedEmbeddings.from_bytes_store(
+        cached_embeddings = CacheBackedEmbeddings.from_bytes_store(
             underlying,
             store,
             namespace = config.EMBEDDING_MODEL
