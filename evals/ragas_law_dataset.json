@@ -1,0 +1,792 @@
+[
+  {
+    "question": "What kinds of information are usually excluded from the definition of Confidential Information in an NDA?",
+    "ground_truth": "The definition commonly excludes information that is already publicly available, was lawfully known by the receiving party before disclosure, is independently developed without reference to the confidential information, or is lawfully obtained from a third party without a confidentiality obligation.",
+    "relevant_doc_ids": [
+      "law_doc_1"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_83",
+      "law_doc_1",
+      "law_doc_82"
+    ],
+    "answer": "NDAs typically carve out information that is already public, was known to the receiving party beforehand, was independently developed without using the confidential material, or was legitimately received from a third party with no confidentiality duty.",
+    "contexts": [
+      "However, the definition commonly excludes information that is already publicly available, was lawfully known by the receiving party before disclosure, is independently developed without reference to the confidential information, or is lawfully obtained from a third party without a confidentiality obligation."
+    ]
+  },
+  {
+    "question": "Does signing an NDA transfer ownership of intellectual property to the receiving party?",
+    "ground_truth": "No. An NDA generally does not transfer ownership of intellectual property merely because confidential information has been disclosed; ownership should be addressed separately if necessary.",
+    "relevant_doc_ids": [
+      "law_doc_1"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_1",
+      "law_doc_84",
+      "law_doc_83"
+    ],
+    "answer": "No, disclosure under an NDA does not by itself transfer IP ownership. If ownership of inventions, software or designs needs to be dealt with, it should be addressed separately.",
+    "contexts": [
+      "An NDA generally does not transfer ownership of intellectual property merely because confidential information has been disclosed."
+    ]
+  },
+  {
+    "question": "What may an NDA require if the receiving party is legally compelled to disclose confidential information?",
+    "ground_truth": "The agreement may require the receiving party to give notice to the disclosing party where legally permitted and to cooperate in seeking protective measures.",
+    "relevant_doc_ids": [
+      "law_doc_1"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_1",
+      "law_doc_83",
+      "law_doc_84"
+    ],
+    "answer": "If disclosure is compelled by a court order, government request or other legal process, an NDA may oblige the receiving party to notify the disclosing party (where law allows) and help seek protective measures.",
+    "contexts": [
+      "If the receiving party is legally required to disclose confidential information because of a court order, government request, regulatory requirement, or other legal process, the agreement may require the receiving party to provide notice to the disclosing party where legally permitted and cooperate in seeking protective measures."
+    ]
+  },
+  {
+    "question": "What happens to employment-contract clauses that try to remove statutory employee protections?",
+    "ground_truth": "Contractual provisions that attempt to remove statutory employee protections may be unenforceable depending on the jurisdiction, since employment agreements must operate consistently with mandatory employment laws.",
+    "relevant_doc_ids": [
+      "law_doc_2"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_2",
+      "law_doc_32",
+      "law_doc_35"
+    ],
+    "answer": "Such clauses may be unenforceable depending on the jurisdiction, because an employment agreement has to be consistent with mandatory employment laws.",
+    "contexts": [
+      "Employment agreements must operate consistently with mandatory employment laws and regulations. Contractual provisions that attempt to remove statutory employee protections may be unenforceable depending on the jurisdiction."
+    ]
+  },
+  {
+    "question": "In a Service Agreement, what is the difference between customer materials and provider materials?",
+    "ground_truth": "Customer materials include data, documents, trademarks or specifications supplied to the provider, while provider materials include pre-existing software, tools, frameworks, methodologies and reusable components.",
+    "relevant_doc_ids": [
+      "law_doc_3"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_3",
+      "law_doc_2",
+      "law_doc_5"
+    ],
+    "answer": "Customer materials are things the customer supplies, like data, documents, trademarks or specifications. Provider materials are the provider's own pre-existing software, tools, frameworks, methodologies and reusable components.",
+    "contexts": [
+      "Customer materials may include data, documents, trademarks, or specifications supplied to the provider. Provider materials may include pre-existing software, tools, frameworks, methodologies, and reusable components."
+    ]
+  },
+  {
+    "question": "What measurable standards can Service Levels in a Service Agreement cover?",
+    "ground_truth": "Service Levels may include system availability, response times, resolution times, maintenance windows, and escalation procedures.",
+    "relevant_doc_ids": [
+      "law_doc_3"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_3",
+      "law_doc_2",
+      "law_doc_5"
+    ],
+    "answer": "They can cover system availability, response and resolution times, maintenance windows, and escalation procedures.",
+    "contexts": [
+      "These may include system availability, response times, resolution times, maintenance windows, and escalation procedures."
+    ]
+  },
+  {
+    "question": "Is a consultant's status as an independent contractor determined solely by the contract wording?",
+    "ground_truth": "No. The agreement generally identifies the consultant as an independent contractor, but the legal classification depends on the actual relationship and applicable law rather than solely on contract language.",
+    "relevant_doc_ids": [
+      "law_doc_3"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_3",
+      "law_doc_47",
+      "law_doc_46"
+    ],
+    "answer": "No. Although the contract usually labels the consultant an independent contractor, the real classification depends on the actual working relationship and the applicable law.",
+    "contexts": [
+      "The agreement generally identifies the consultant as an independent contractor rather than an employee, although the legal classification depends on the actual relationship and applicable law rather than solely on contract language."
+    ]
+  },
+  {
+    "question": "Is a Memorandum of Understanding (MoU) always legally binding?",
+    "ground_truth": "No. Whether an MoU is legally binding depends on its language, applicable law, and the circumstances surrounding its formation. It also does not necessarily replace a definitive contract.",
+    "relevant_doc_ids": [
+      "law_doc_6"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_6",
+      "law_doc_21",
+      "law_doc_28"
+    ],
+    "answer": "Not necessarily. Binding effect depends on the MoU's wording, the governing law and how it was formed, and it may leave matters open for a later definitive agreement.",
+    "contexts": [
+      "However, whether an MoU is legally binding depends on its language, applicable law, and the circumstances surrounding its formation.",
+      "An MoU does not necessarily replace a definitive contract."
+    ]
+  },
+  {
+    "question": "What should a lease or rental agreement specify about a security deposit?",
+    "ground_truth": "It should specify the circumstances under which deductions may be made and the procedure for returning the deposit; a deposit may be collected subject to applicable law.",
+    "relevant_doc_ids": [
+      "law_doc_7"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_6",
+      "law_doc_42",
+      "law_doc_41"
+    ],
+    "answer": "The agreement should state when deductions can be made from the deposit and how the deposit will be returned, subject to applicable law.",
+    "contexts": [
+      "A Security Deposit may be collected subject to applicable law. The agreement should specify circumstances under which deductions may be made and the procedure for returning the deposit."
+    ]
+  },
+  {
+    "question": "Why should a Sale Agreement address the transfer of ownership and risk separately?",
+    "ground_truth": "Because ownership and risk may transfer from seller to buyer at different times depending on the contract.",
+    "relevant_doc_ids": [
+      "law_doc_7"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_7",
+      "law_doc_4",
+      "law_doc_1"
+    ],
+    "answer": "Ownership and risk do not necessarily pass at the same moment, so the agreement should state when each transfers from seller to buyer.",
+    "contexts": [
+      "The agreement should address when ownership and risk transfer from the seller to the buyer. These concepts may occur at different times depending on the contract."
+    ]
+  },
+  {
+    "question": "What may a franchisee be required to do after a Franchise Agreement is terminated?",
+    "ground_truth": "The franchisee may be required to stop using the franchisor's trademarks, return confidential materials, discontinue branded operations, and satisfy outstanding financial obligations.",
+    "relevant_doc_ids": [
+      "law_doc_8"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_8",
+      "law_doc_7",
+      "law_doc_40"
+    ],
+    "answer": "After termination the franchisee may have to stop using the franchisor's trademarks, return confidential materials, end branded operations and settle any outstanding financial obligations.",
+    "contexts": [
+      "Following termination, the franchisee may be required to stop using the franchisor's trademarks, return confidential materials, discontinue branded operations, and satisfy outstanding financial obligations."
+    ]
+  },
+  {
+    "question": "What does a force-majeure clause address?",
+    "ground_truth": "It addresses extraordinary events outside a party's reasonable control that prevent or materially interfere with contractual performance, such as natural disasters, certain government actions, wars, or widespread infrastructure failures.",
+    "relevant_doc_ids": [
+      "law_doc_9"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_9",
+      "law_doc_3",
+      "law_doc_10"
+    ],
+    "answer": "It covers extraordinary events beyond a party's reasonable control, like natural disasters or wars, that prevent or materially interfere with performing the contract.",
+    "contexts": [
+      "A force-majeure clause addresses extraordinary events outside a party's reasonable control that prevent or materially interfere with contractual performance."
+    ]
+  },
+  {
+    "question": "What is the effect of a severability clause?",
+    "ground_truth": "It addresses the effect of a provision being found invalid, illegal or unenforceable, generally providing that the remaining provisions continue to operate to the extent permitted by law.",
+    "relevant_doc_ids": [
+      "law_doc_10"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_10",
+      "law_doc_9",
+      "law_doc_53"
+    ],
+    "answer": "If one provision is held invalid or unenforceable, a severability clause generally keeps the rest of the agreement operating, to the extent the law permits.",
+    "contexts": [
+      "A severability clause addresses the effect of a provision being found invalid, illegal, or unenforceable, generally providing that the remaining provisions continue to operate to the extent permitted by law."
+    ]
+  },
+  {
+    "question": "What is a Plaint?",
+    "ground_truth": "A Plaint is a formal document through which a civil suit is initiated before a competent court, containing the plaintiff's material facts, the legal basis of the claim and the relief requested.",
+    "relevant_doc_ids": [
+      "law_doc_10"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_10",
+      "law_doc_11",
+      "law_doc_107"
+    ],
+    "answer": "A plaint is the formal document that starts a civil suit in a competent court, setting out the plaintiff's facts, legal basis and the relief sought.",
+    "contexts": [
+      "A Plaint is a formal document through which a civil suit is initiated before a competent court."
+    ]
+  },
+  {
+    "question": "What does 'cause of action' mean in the context of a plaint?",
+    "ground_truth": "It refers broadly to the collection of material facts that gives a person the basis to seek judicial relief.",
+    "relevant_doc_ids": [
+      "law_doc_10"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_10",
+      "law_doc_11",
+      "law_doc_17"
+    ],
+    "answer": "A cause of action is the set of material facts that entitles a person to seek relief from a court, and the plaint must disclose it.",
+    "contexts": [
+      "A cause of action refers broadly to the collection of material facts that gives a person the basis to seek judicial relief."
+    ]
+  },
+  {
+    "question": "How do a set-off and a counterclaim differ in a written statement?",
+    "ground_truth": "A set-off is a claim by the defendant against the plaintiff that may be adjusted against the plaintiff's monetary claim, while a counterclaim is a claim by the defendant against the plaintiff within the same proceeding so related disputes are adjudicated together.",
+    "relevant_doc_ids": [
+      "law_doc_11"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_11",
+      "law_doc_12",
+      "law_doc_14"
+    ],
+    "answer": "A set-off is a defendant's claim that can be adjusted against the plaintiff's monetary claim, whereas a counterclaim is a separate claim by the defendant raised in the same proceeding so both are decided together.",
+    "contexts": [
+      "A set-off involves a claim by the defendant against the plaintiff that may be adjusted against the plaintiff's monetary claim, subject to the applicable procedural requirements.",
+      "A counterclaim is a claim made by the defendant against the plaintiff within the same proceeding, allowing certain disputes between the parties to be adjudicated together."
+    ]
+  },
+  {
+    "question": "Which constitutional articles ground writ jurisdiction in India, and what are the traditional writs?",
+    "ground_truth": "Writ jurisdiction is principally associated with Article 32 (Supreme Court) and Article 226 (High Courts). The traditional writs are Habeas Corpus, Mandamus, Certiorari, Prohibition and Quo Warranto.",
+    "relevant_doc_ids": [
+      "law_doc_17"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_17",
+      "law_doc_21",
+      "law_doc_28"
+    ],
+    "answer": "Article 32 covers the Supreme Court and Article 226 the High Courts. The traditional writs are Habeas Corpus, Mandamus, Certiorari, Prohibition and Quo Warranto.",
+    "contexts": [
+      "In India, writ jurisdiction is principally associated with Article 32 of the Constitution of India for the Supreme Court and Article 226 for High Courts, subject to their respective constitutional scope and limitations.",
+      "Constitutional writs traditionally include: • Habeas Corpus • Mandamus • Certiorari • Prohibition • Quo Warranto"
+    ]
+  },
+  {
+    "question": "What is a Caveat and which provision of the Code of Civil Procedure is it associated with?",
+    "ground_truth": "A Caveat is a formal request to a court by a person who expects another party to initiate proceedings, asking to be heard before any order is passed. It is associated with Section 148A of the Code of Civil Procedure, 1908.",
+    "relevant_doc_ids": [
+      "law_doc_19"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_19",
+      "law_doc_10",
+      "law_doc_51"
+    ],
+    "answer": "A caveat lets a person who anticipates a suit ensure they are heard before an order is passed. It is linked to Section 148A CPC, 1908, and does not decide the merits of the dispute.",
+    "contexts": [
+      "The concept of caveat is associated in Indian civil procedure with Section 148A of the Code of Civil Procedure, 1908, subject to its statutory requirements and applicability.",
+      "A caveat does not determine the merits of the underlying dispute."
+    ]
+  },
+  {
+    "question": "How is a Revision Petition different from an ordinary appeal?",
+    "ground_truth": "Revision is distinct from an ordinary appeal; its scope depends on the statutory provision and generally concerns jurisdictional or material procedural/legal errors within the limits of the revisional power.",
+    "relevant_doc_ids": [
+      "law_doc_16"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_16",
+      "law_doc_15",
+      "law_doc_41"
+    ],
+    "answer": "A revision petition seeks supervisory intervention by a higher court and is not a repeat of the original case. Its scope is limited by the statute, typically to jurisdictional or material procedural/legal errors.",
+    "contexts": [
+      "Revision is distinct from an ordinary appeal. The scope of revisional jurisdiction depends on the relevant statutory provision and the circumstances of the case."
+    ]
+  },
+  {
+    "question": "What is the purpose of the verification clause in an affidavit?",
+    "ground_truth": "It identifies which statements are based on personal knowledge and which are based on information believed to be true.",
+    "relevant_doc_ids": [
+      "law_doc_14"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_14",
+      "law_doc_13",
+      "law_doc_72"
+    ],
+    "answer": "The verification clause distinguishes statements made from personal knowledge from those based on information the deponent believes to be true.",
+    "contexts": [
+      "The verification clause is important because it identifies which statements are based on personal knowledge and which are based on information believed to be true."
+    ]
+  },
+  {
+    "question": "What is a Rejoinder?",
+    "ground_truth": "A Rejoinder is a subsequent response by the original applicant or petitioner addressing the arguments or factual assertions raised in the respondent's reply or counter-affidavit.",
+    "relevant_doc_ids": [
+      "law_doc_18"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_18",
+      "law_doc_106",
+      "law_doc_107"
+    ],
+    "answer": "A rejoinder is the original applicant or petitioner's follow-up response to the respondent's reply or counter-affidavit.",
+    "contexts": [
+      "A Rejoinder generally refers to a subsequent response by the original applicant or petitioner addressing the arguments or factual assertions raised in the respondent's reply or counter-affidavit."
+    ]
+  },
+  {
+    "question": "How are counter-affidavits suggested to be segmented for RAG systems?",
+    "ground_truth": "They can be segmented into allegation-response pairs, which supports questions such as what allegation the petitioner made and how the respondent responded.",
+    "relevant_doc_ids": [
+      "law_doc_14"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_14",
+      "law_doc_13",
+      "law_doc_20"
+    ],
+    "answer": "By splitting them into allegation-response pairs, so questions about what was alleged and how the respondent replied can be answered directly.",
+    "contexts": [
+      "For RAG systems, counter-affidavits can be segmented into allegation-response pairs, making them particularly useful for question answering such as:"
+    ]
+  },
+  {
+    "question": "What is the difference between the Memorandum of Association and the Articles of Association?",
+    "ground_truth": "The MOA establishes the company's fundamental constitutional framework, while the AOA primarily establishes rules governing internal management and administration.",
+    "relevant_doc_ids": [
+      "law_doc_22"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_21",
+      "law_doc_28",
+      "law_doc_24"
+    ],
+    "answer": "The MOA sets out the company's fundamental constitutional framework (name, objects, liability, capital), whereas the AOA contains the internal management and administration rules.",
+    "contexts": [
+      "The MOA is distinct from the AOA. The MOA establishes the company's fundamental constitutional framework, while the AOA primarily establishes rules governing internal management and administration."
+    ]
+  },
+  {
+    "question": "What prevails if a provision of the Articles of Association conflicts with a mandatory statutory requirement?",
+    "ground_truth": "The statutory requirement will generally prevail.",
+    "relevant_doc_ids": [
+      "law_doc_21"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_21",
+      "law_doc_28",
+      "law_doc_24"
+    ],
+    "answer": "The mandatory statutory requirement generally prevails over the Articles.",
+    "contexts": [
+      "Where a provision of the Articles conflicts with a mandatory statutory requirement, the statutory requirement will generally prevail."
+    ]
+  },
+  {
+    "question": "What are tag-along and drag-along rights in a Shareholder Agreement?",
+    "ground_truth": "Tag-along rights may permit minority shareholders to participate in a sale by a controlling shareholder on specified terms; drag-along rights may allow specified shareholders to require other shareholders to participate in a sale of the company.",
+    "relevant_doc_ids": [
+      "law_doc_24"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_23",
+      "law_doc_24",
+      "law_doc_31"
+    ],
+    "answer": "Tag-along rights let minority shareholders join a controlling shareholder's sale; drag-along rights let specified shareholders force others to take part in a sale of the company.",
+    "contexts": [
+      "Tag-along rights may permit minority shareholders to participate in a sale by a controlling shareholder on specified terms.",
+      "Drag-along rights may allow specified shareholders to require other shareholders to participate in a sale of the company, subject to contractual and legal requirements."
+    ]
+  },
+  {
+    "question": "What are conditions precedent in a Share Purchase Agreement?",
+    "ground_truth": "Conditions precedent are requirements that must be satisfied before completion, such as corporate approvals, regulatory approvals, third-party or lender consents, completion of due diligence, or other contractual requirements.",
+    "relevant_doc_ids": [
+      "law_doc_25"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_24",
+      "law_doc_25",
+      "law_doc_31"
+    ],
+    "answer": "They are requirements, like regulatory approvals, third-party consents or due diligence, that must be met before the share sale can complete.",
+    "contexts": [
+      "Conditions precedent are requirements that must be satisfied before completion."
+    ]
+  },
+  {
+    "question": "Does a Board Resolution remove the need to comply with statutory requirements?",
+    "ground_truth": "No. A Board Resolution does not eliminate the need to comply with applicable statutory requirements such as shareholder approval, regulatory approval, filing, or disclosure.",
+    "relevant_doc_ids": [
+      "law_doc_23"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_23",
+      "law_doc_22",
+      "law_doc_31"
+    ],
+    "answer": "No, where the law requires shareholder approval, regulatory approval, filings or disclosures, those must still be satisfied in addition to the board resolution.",
+    "contexts": [
+      "A Board Resolution does not eliminate the need to comply with applicable statutory requirements."
+    ]
+  },
+  {
+    "question": "How is member liability generally limited in a company limited by shares under the MOA liability clause?",
+    "ground_truth": "The liability of members is generally limited to the amount unpaid on the shares held by them, subject to applicable law.",
+    "relevant_doc_ids": [
+      "law_doc_22"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_22",
+      "law_doc_9",
+      "law_doc_21"
+    ],
+    "answer": "Members' liability is generally limited to the unpaid amount on their shares, subject to applicable law.",
+    "contexts": [
+      "In a company limited by shares, the liability of members is generally limited to the amount unpaid on the shares held by them, subject to applicable law."
+    ]
+  },
+  {
+    "question": "Which company assets may an employee be required to return in a resignation acceptance letter?",
+    "ground_truth": "Assets such as laptops, mobile devices, identification cards, documents, storage devices, keys, access tokens, and other organizational property.",
+    "relevant_doc_ids": [
+      "law_doc_34"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_33",
+      "law_doc_34",
+      "law_doc_2"
+    ],
+    "answer": "Laptops, mobile devices, ID cards, documents, storage devices, keys, access tokens and other organizational property.",
+    "contexts": [
+      "The letter may require the employee to return company assets such as laptops, mobile devices, identification cards, documents, storage devices, keys, access tokens, and other organizational property."
+    ]
+  },
+  {
+    "question": "Which prevails if statutory leave entitlements exceed the company's internal leave policy?",
+    "ground_truth": "Where applicable law provides a greater entitlement than the organization's internal policy, the statutory requirement should generally prevail.",
+    "relevant_doc_ids": [
+      "law_doc_37"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_37",
+      "law_doc_29",
+      "law_doc_30"
+    ],
+    "answer": "The statutory entitlement should generally prevail over the internal policy.",
+    "contexts": [
+      "Where applicable law provides a greater entitlement than the organization's internal policy, the statutory requirement should generally prevail."
+    ]
+  },
+  {
+    "question": "What encumbrances must a Seller disclose under a Sale Deed?",
+    "ground_truth": "The Seller shall disclose existing mortgages, charges, liens, court attachments, acquisition proceedings, easements, leases, licences, development agreements, claims, or other third-party interests affecting the property.",
+    "relevant_doc_ids": [
+      "law_doc_39"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_39",
+      "law_doc_38",
+      "law_doc_37"
+    ],
+    "answer": "The seller must disclose mortgages, charges, liens, court attachments, acquisition proceedings, easements, leases, licences, development agreements, claims and any other third-party interests in the property.",
+    "contexts": [
+      "The Seller shall disclose existing mortgages, charges, liens, court attachments, acquisition proceedings, easements, leases, licences, development agreements, claims, or other third-party interests affecting the property."
+    ]
+  },
+  {
+    "question": "Can a Donor unilaterally revoke a gift just by changing their mind under a Gift Deed?",
+    "ground_truth": "No. Parties should not assume that a gift can be unilaterally revoked merely because the Donor subsequently changes their mind; revocation is subject to applicable law.",
+    "relevant_doc_ids": [
+      "law_doc_40"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_40",
+      "law_doc_39",
+      "law_doc_24"
+    ],
+    "answer": "No. Revocation is governed by applicable law, and a donor changing their mind is not enough on its own.",
+    "contexts": [
+      "Any provision concerning revocation shall be subject to applicable law. The parties should not assume that a gift can be unilaterally revoked merely because the Donor subsequently changes their mind."
+    ]
+  },
+  {
+    "question": "What is a Property Partition Agreement?",
+    "ground_truth": "It records the division of jointly owned property among co-owners.",
+    "relevant_doc_ids": [
+      "law_doc_45"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_45",
+      "law_doc_70",
+      "law_doc_59"
+    ],
+    "answer": "It is an agreement recording how jointly owned property is divided among the co-owners.",
+    "contexts": [
+      "A Property Partition Agreement records the division of jointly owned property among co-owners."
+    ]
+  },
+  {
+    "question": "What should an indemnification clause in a property agreement clearly identify?",
+    "ground_truth": "Triggering events, covered losses, exclusions, claim procedure, notice requirements, limitation periods, monetary caps where applicable, and survival period.",
+    "relevant_doc_ids": [
+      "law_doc_51"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_51",
+      "law_doc_9",
+      "law_doc_1"
+    ],
+    "answer": "It should set out the triggering events, covered losses, exclusions, claim procedure, notice requirements, limitation periods, any monetary caps, and the survival period.",
+    "contexts": [
+      "Indemnification clauses should clearly identify: • triggering events; • covered losses; • exclusions; • claim procedure; • notice requirements; • limitation periods; • monetary caps where applicable; and • survival period."
+    ]
+  },
+  {
+    "question": "What is a Divorce Petition?",
+    "ground_truth": "A formal legal pleading through which a spouse seeks dissolution of a marriage before a competent court.",
+    "relevant_doc_ids": [
+      "law_doc_52"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_52",
+      "law_doc_63",
+      "law_doc_64"
+    ],
+    "answer": "It is a formal pleading by which a spouse asks a competent court to dissolve the marriage.",
+    "contexts": [
+      "A Divorce Petition is a formal legal pleading through which a spouse seeks dissolution of a marriage before a competent court."
+    ]
+  },
+  {
+    "question": "What is a Maintenance Petition?",
+    "ground_truth": "A legal application seeking financial support for a person who is legally entitled to maintenance or support under the applicable statute or personal law.",
+    "relevant_doc_ids": [
+      "law_doc_54"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_54",
+      "law_doc_65",
+      "law_doc_52"
+    ],
+    "answer": "It is an application seeking financial support for someone legally entitled to maintenance under the applicable statute or personal law.",
+    "contexts": [
+      "A Maintenance Petition is a legal application seeking financial support for a person who is legally entitled to maintenance or support under the applicable statute or personal law."
+    ]
+  },
+  {
+    "question": "What does a Special Power of Attorney grant, and when may the authority terminate?",
+    "ground_truth": "It grants authority for a specific transaction or purpose. Authority may terminate upon revocation, expiry of a specified period, completion of the authorized transaction, death or incapacity where applicable, or other circumstances recognized by law.",
+    "relevant_doc_ids": [
+      "law_doc_58"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_69",
+      "law_doc_57",
+      "law_doc_58"
+    ],
+    "answer": "It authorises an agent for a specific transaction or purpose, and ends on revocation, expiry, completion of the transaction, death or incapacity where applicable, or other legally recognised events.",
+    "contexts": [
+      "A Special Power of Attorney grants authority for a specific transaction or purpose.",
+      "Authority may terminate upon revocation, expiry of a specified period, completion of the authorized transaction, death or incapacity where applicable, or other circumstances recognized by law."
+    ]
+  },
+  {
+    "question": "Is a document legally conclusive merely because it is attached to a family-law petition?",
+    "ground_truth": "No. A document should not be treated as legally conclusive merely because it has been attached to a petition; relevance and admissibility depend on procedural and evidentiary law.",
+    "relevant_doc_ids": [
+      "law_doc_62"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_62",
+      "law_doc_73",
+      "law_doc_72"
+    ],
+    "answer": "No, attachment alone does not make a document conclusive; its relevance and admissibility depend on procedural and evidentiary law.",
+    "contexts": [
+      "A document should not be treated as legally conclusive merely because it has been attached to a petition."
+    ]
+  },
+  {
+    "question": "How should documents be divided for retrieval according to the corpus guidance?",
+    "ground_truth": "Documents should preferably be divided into semantically meaningful sections rather than arbitrary fixed-length text, using headings such as Facts, Grounds, Relief, Verification and Supporting Documents as retrieval signals.",
+    "relevant_doc_ids": [
+      "law_doc_63"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_63",
+      "law_doc_74",
+      "law_doc_45"
+    ],
+    "answer": "Split them into semantically meaningful sections (e.g., Facts, Grounds, Relief, Verification) rather than arbitrary fixed-length chunks.",
+    "contexts": [
+      "For retrieval systems, documents should preferably be divided into semantically meaningful sections rather than arbitrary fixed-length text."
+    ]
+  },
+  {
+    "question": "Should the corpus be treated as a statement of the law in a particular jurisdiction?",
+    "ground_truth": "No. It is synthetic legal-domain reference material for retrieval, classification, document understanding and RAG experimentation, and actual legal documents must follow the applicable statute, rules and current case law.",
+    "relevant_doc_ids": [
+      "law_doc_63"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_63",
+      "law_doc_74",
+      "law_doc_52"
+    ],
+    "answer": "No. It is synthetic reference material for RAG experiments and not a statement of the law of any jurisdiction.",
+    "contexts": [
+      "This corpus is intended as synthetic legal-domain reference material for retrieval, classification, document understanding, and RAG experimentation. It should not be treated as a statement of the law in any particular jurisdiction."
+    ]
+  },
+  {
+    "question": "What is a Copyright Assignment Agreement?",
+    "ground_truth": "A legal instrument through which the owner of copyright transfers specified copyright rights to another person or entity.",
+    "relevant_doc_ids": [
+      "law_doc_74"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_74",
+      "law_doc_78",
+      "law_doc_75"
+    ],
+    "answer": "It is a legal instrument by which a copyright owner transfers specified rights in a work to another person or entity.",
+    "contexts": [
+      "A Copyright Assignment Agreement is a legal instrument through which the owner of copyright transfers specified copyright rights to another person or entity."
+    ]
+  },
+  {
+    "question": "What may happen if an examiner raises objections to a trademark application?",
+    "ground_truth": "The applicant may be required to submit a response within the prescribed period, addressing classification, distinctiveness, likelihood of confusion, descriptive elements, procedural deficiencies, or other objections.",
+    "relevant_doc_ids": [
+      "law_doc_77"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_77",
+      "law_doc_76",
+      "law_doc_78"
+    ],
+    "answer": "The applicant may need to respond within the prescribed period, addressing issues such as classification, distinctiveness or likelihood of confusion.",
+    "contexts": [
+      "If an examiner raises objections, the applicant may be required to submit a response within the prescribed period."
+    ]
+  },
+  {
+    "question": "What forms can a license granted under an IP License Agreement take?",
+    "ground_truth": "The license may be exclusive, non-exclusive, sole, territorial, field-limited, time-limited, or perpetual where legally permissible.",
+    "relevant_doc_ids": [
+      "law_doc_80"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_80",
+      "law_doc_5",
+      "law_doc_79"
+    ],
+    "answer": "It can be exclusive, non-exclusive, sole, territorial, field-limited, time-limited, or perpetual where legally permissible.",
+    "contexts": [
+      "The license may be: • exclusive; • non-exclusive; • sole; • territorial; • field-limited; • time-limited; • perpetual where legally permissible."
+    ]
+  },
+  {
+    "question": "To whom may a receiving party disclose confidential information under the IP-related NDA template?",
+    "ground_truth": "To employees, professional advisers, contractors, or representatives who have a legitimate need to know and are subject to appropriate confidentiality obligations.",
+    "relevant_doc_ids": [
+      "law_doc_83"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_1",
+      "law_doc_83",
+      "law_doc_84"
+    ],
+    "answer": "Only to employees, professional advisers, contractors or representatives with a legitimate need to know who are bound by suitable confidentiality obligations.",
+    "contexts": [
+      "Disclosure may be permitted to employees, professional advisers, contractors, or representatives who have a legitimate need to know the information and are subject to appropriate confidentiality obligations."
+    ]
+  },
+  {
+    "question": "Why is it important to preserve evidence before requesting removal of defamatory online content?",
+    "ground_truth": "Because online content can be edited or deleted; the sender may preserve the original content, date, source and manner of publication.",
+    "relevant_doc_ids": [
+      "law_doc_88"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_88",
+      "law_doc_92",
+      "law_doc_82"
+    ],
+    "answer": "Online content can be edited or deleted, so the sender should preserve the original content, date, source and manner of publication first.",
+    "contexts": [
+      "For online material, preserving evidence before requesting removal may be important because online content can be edited or deleted."
+    ]
+  },
+  {
+    "question": "What is an Eviction Notice?",
+    "ground_truth": "A formal notice relating to termination of a tenancy, demand for possession, or requirement that an occupant vacate a property.",
+    "relevant_doc_ids": [
+      "law_doc_88"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_88",
+      "law_doc_89",
+      "law_doc_95"
+    ],
+    "answer": "It is a formal notice terminating a tenancy, demanding possession, or requiring an occupant to vacate.",
+    "contexts": [
+      "An Eviction Notice is a formal notice relating to termination of a tenancy, demand for possession, or requirement that an occupant vacate a property."
+    ]
+  },
+  {
+    "question": "Why is the bank return memo important in a cheque bounce notice?",
+    "ground_truth": "It is an important supporting document, and the notice should accurately reproduce or describe the reason for dishonour rather than assuming an undocumented reason.",
+    "relevant_doc_ids": [
+      "law_doc_93"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_93",
+      "law_doc_96",
+      "law_doc_94"
+    ],
+    "answer": "It documents the reason for dishonour, which the notice must reflect accurately instead of assuming a reason.",
+    "contexts": [
+      "The bank's return memo or dishonour communication is an important supporting document. The notice should accurately reproduce or describe the reason for dishonour rather than assuming a reason that is not documented."
+    ]
+  },
+  {
+    "question": "What is a Legal Notice?",
+    "ground_truth": "A formal communication through which one party informs another of a legal grievance, claim, demand, proposed action, or intention to pursue a legal remedy.",
+    "relevant_doc_ids": [
+      "law_doc_18"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_94",
+      "law_doc_18",
+      "law_doc_90"
+    ],
+    "answer": "A legal notice is a formal communication informing another party of a grievance, claim, demand, proposed action or intention to pursue a legal remedy.",
+    "contexts": [
+      "A Legal Notice is a formal communication through which one party informs another party of a legal grievance, claim, demand, proposed action, or intention to pursue a legal remedy."
+    ]
+  },
+  {
+    "question": "Under which Act is the RTI application template drafted and to whom is it addressed?",
+    "ground_truth": "It is an application under the Right to Information Act, 2005, addressed to the Public Information Officer (PIO) of the public authority.",
+    "relevant_doc_ids": [
+      "law_doc_96"
+    ],
+    "retrieved_doc_ids": [
+      "law_doc_96",
+      "law_doc_97",
+      "law_doc_103"
+    ],
+    "answer": "It is drafted under the Right to Information Act, 2005, and addressed to the Public Information Officer (PIO) of the public authority.",
+    "contexts": [
+      "Subject: Application seeking information under the Right to Information Act, 2005"
+    ]
+  }
+]
