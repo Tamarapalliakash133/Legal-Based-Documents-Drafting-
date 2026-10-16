@@ -56,26 +56,11 @@ def add_reranking(base_retriever):
 
     return reranked
 
-def add_multi_query(base_retriever,llm : ChatOpenAI):
-    '''
-    its expands the query and the create multiple queries like that and related to that
-    '''
-    mq_retriever = MultiQueryRetriever.from_llm(
-        retriever = base_retriever,
-        llm = llm
-    )
 
-    collection.insert_one({
-        "multiquery" : "langchain-multiquery attched",
-        "no_of_queries" : config.MULTI_QUERY_COUNT
-    })
-
-    return mq_retriever
 
 def build_retriever(llm : ChatOpenAI):
     hybrid = load_hybrid_retriever()
     reranked = add_reranking(hybrid)
-    expanded = add_multi_query(reranked,llm)
 
-    return expanded
+    return reranked
 

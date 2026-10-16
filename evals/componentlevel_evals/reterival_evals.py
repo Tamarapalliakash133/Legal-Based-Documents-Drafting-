@@ -47,7 +47,7 @@ def evaluate(data, k=3):
     return rows, summary
 
 if __name__ == "__main__":
-    data = json.load(open("evals/ragas_law_dataset.json"))
+    data = json.load(open("evals/evals_data/ragas_law_dataset.json"))
     rows, summary = evaluate(data, k=3)
     for r in rows:
         print({k: (round(v, 3) if isinstance(v, float) else v) for k, v in r.items()})
