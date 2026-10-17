@@ -16,7 +16,6 @@ langsmith
 openai
 faiss-cpu
 rank-bm25
-sentence-transformers
 pypdf
 pypdfium2
 reportlab

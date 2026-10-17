@@ -87,10 +87,6 @@ class HybridHydeRetriever:
             max_retries=0,
         )
         self._hyde_chain = HYDE_PROMPT | self.hyde_llm
-        self._reranker = None
-        self._reranker_lock = threading.Lock()
-        self._reranker_failed = False
-
         collection.insert_one({
             "is_ready_hydrid_reterival": "yes",
             "hyde": config.HYDE_ENABLED,
@@ -101,28 +97,11 @@ class HybridHydeRetriever:
         })
 
     def warmup(self):
-        """Load the cross-encoder + hit the embedding path once so the first user is not slow."""
-        self._get_reranker()
+        """Warm up the embedding path without loading a reranker."""
         try:
             self.embeddings.embed_query("warmup legal agreement")
         except Exception:
             pass
-
-    def _get_reranker(self):
-        if self._reranker is not None or self._reranker_failed:
-            return self._reranker
-        with self._reranker_lock:
-            if self._reranker is None and not self._reranker_failed:
-                try:
-                    from langchain_community.cross_encoders import HuggingFaceCrossEncoder
-                    self._reranker = HuggingFaceCrossEncoder(model_name=config.RERANKER_MODEL)
-                    self._reranker.score([("warm", "up")])
-                    collection.insert_one({"reranking": "cross_encoder attached", "top_k": config.TOP_K_AFTER_RERANK})
-                except Exception as e:  # missing torch / no network -> fuse-only ranking
-                    self._reranker_failed = True
-                    collection.insert_one({"reranking": "unavailable", "error": str(e)[:200]})
-        return self._reranker
-
 
     @traceable(run_type="retriever", name="bm25_search")
     def _bm25(self, query: str) -> List[Document]:
@@ -169,24 +148,16 @@ class HybridHydeRetriever:
         order = sorted(scores, key=scores.get, reverse=True)
         return [keep[k] for k in order]
 
-    @traceable(run_type="chain", name="cross_encoder_rerank")
-    def _rerank(self, query: str, docs: List[Document]) -> List[Document]:
-        rr = self._get_reranker()
-        cands = docs[: config.RERANK_CANDIDATES]
-        if rr is None or len(cands) <= 1:
-            return cands[: config.TOP_K_AFTER_RERANK]
-        scores = rr.score([(query, d.page_content) for d in cands])
-        ranked = sorted(zip(scores, cands), key=lambda x: x[0], reverse=True)
-        return [d for _, d in ranked[: config.TOP_K_AFTER_RERANK]]
-
-
     @traceable(run_type="retriever", name="retrieve")
     def retrieve(self, question: str, history: str = "", use_hyde: Optional[bool] = None,
-                 rerank: bool = True) -> RetrievalResult:
+                 rerank: Optional[bool] = None) -> RetrievalResult:
+        # `rerank` is retained for backward compatibility with existing callers;
+        # reranking is disabled regardless of its value.
         t0 = time.perf_counter()
         use_hyde = config.HYDE_ENABLED if use_hyde is None else use_hyde
 
-        ckey = "ret:" + make_key(question.lower().strip(), history[-400:], use_hyde, rerank)
+        # New cache namespace prevents reuse of results cached with the old reranker.
+        ckey = "ret_no_rerank:" + make_key(question.lower().strip(), history[-400:], use_hyde)
         hit = kv_get(ckey)
         if hit:
             return RetrievalResult(_from_json(hit["docs"]), hit["hyde"], hit.get("passage"), True,
@@ -221,8 +192,8 @@ class HybridHydeRetriever:
         fused = self._fuse(lists, weights)
         t_fuse = time.perf_counter()
 
-        rq = f"{question}" if not history else f"{history.splitlines()[-1][:200]} {question}"
-        docs = self._rerank(rq, fused) if rerank else fused[: config.TOP_K_AFTER_RERANK]
+        # Use RRF-fused ranking directly; no cross-encoder is loaded or called.
+        docs = fused[: config.TOP_K_AFTER_RERANK]
         t_end = time.perf_counter()
 
        
@@ -231,7 +202,7 @@ class HybridHydeRetriever:
         timings = {
             "plain_search_ms": round((t_plain - t0) * 1000),
             "hyde_wait_ms": round((t_hyde - t_plain) * 1000),
-            "rerank_ms": round((t_end - t_fuse) * 1000),
+            "rerank_ms": 0,
             "retrieval_ms": round((t_end - t0) * 1000),
         }
         kv_set(ckey, {"docs": _to_json(docs), "hyde": hyde_ok, "passage": passage},
