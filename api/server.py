@@ -29,16 +29,37 @@ from store_logs.db import log_event
 FRONTEND_DIST = os.path.join(config.BASE_DIR, "frontend", "dist")
 
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    print("STARTUP: Setting up LLM cache", flush=True)
     setup_llm_cache()
+
+    print("STARTUP: Loading RAG index", flush=True)
     build_index(force_rebuild=False)
+
+    print("STARTUP: Initializing RAG engine", flush=True)
     engine = get_engine()
+
+    print("STARTUP: Initializing drafting engine", flush=True)
     get_draft_engine()
-    threading.Thread(target=engine.warmup, daemon=True).start()
-    if os.getenv("OCR_WARMUP", "true").lower() == "true":
-        threading.Thread(target=warm_ocr, daemon=True).start()
+
+    print("STARTUP: Starting model warmup", flush=True)
+    threading.Thread(
+        target=engine.warmup,
+        daemon=True
+    ).start()
+
+    if os.getenv("OCR_WARMUP", "false").lower() == "true":
+        threading.Thread(
+            target=warm_ocr,
+            daemon=True
+        ).start()
+
+    print("STARTUP: Application initialization complete", flush=True)
+
     yield
+
 
 
 app = FastAPI(title="Law Research & Drafting", lifespan=lifespan)

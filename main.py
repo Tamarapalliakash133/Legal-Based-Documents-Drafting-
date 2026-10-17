@@ -1,7 +1,7 @@
 import asyncio
 import sys
 import time
-
+import os
 from observability.monitor import setup_observability
 
 setup_observability()
@@ -29,4 +29,10 @@ if __name__ == "__main__":
         asyncio.run(_ask(" ".join(sys.argv[1:])))
     else:
         import uvicorn
-        uvicorn.run("api.server:app", host="0.0.0.0", port=10000, reload=False)
+
+        uvicorn.run(
+            "api.server:app",
+            host="0.0.0.0",
+            port=int(os.getenv("PORT", "10000")),
+            reload=False
+        )
