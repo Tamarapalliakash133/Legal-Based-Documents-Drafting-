@@ -1,24 +1,32 @@
-from rag.memory_chain import build_converstional_rag_chain
-from rag.load_chunk import build_index
-from rag.cache_file import set_llm_cache
-
-import rag.config as config
-from observability.monitor import setup_observability
+import asyncio
+import sys
 import time
-import uuid
 
+from observability.monitor import setup_observability
 
-build_index(force_rebuild=False)
-
-session_id = str(uuid.uuid4())
-
-chain = build_converstional_rag_chain()
 setup_observability()
-start = time.perf_counter()
-result = chain.invoke(
-    {"input" : "what is a security deposit"},
-    config = {"configurable" : {"session_id" : session_id}}
-)
-end = time.perf_counter()
-print(result['answer'])
-print(end-start)
+
+
+async def _ask(question: str):
+    from rag.cache_file import setup_llm_cache
+    from rag.load_chunk import build_index
+    from rag.memory_chain import build_converstional_rag_chain
+
+    setup_llm_cache()
+    build_index(force_rebuild=False)
+    engine = build_converstional_rag_chain()
+    start = time.perf_counter()
+    async for ev in engine.answer_stream(question, []):
+        if ev["type"] == "token":
+            print(ev["text"], end="", flush=True)
+        elif ev["type"] == "replace":
+            print("\n[output guardrail replaced answer]\n", ev["text"])
+    print(f"\n\n{time.perf_counter() - start:.2f}s")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        asyncio.run(_ask(" ".join(sys.argv[1:])))
+    else:
+        import uvicorn
+        uvicorn.run("api.server:app", host="0.0.0.0", port=8000, reload=False)
