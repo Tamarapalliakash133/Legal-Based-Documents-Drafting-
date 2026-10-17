@@ -29,4 +29,4 @@ if __name__ == "__main__":
         asyncio.run(_ask(" ".join(sys.argv[1:])))
     else:
         import uvicorn
-        uvicorn.run("api.server:app", host="0.0.0.0", port=8000, reload=False)
+        uvicorn.run("api.server:app", host="0.0.0.0", port=10000, reload=False)
