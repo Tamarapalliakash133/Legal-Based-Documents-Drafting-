@@ -9,7 +9,7 @@ langchain
 langchain-classic
 langchain-community
 langchain-openai
-langchain-redis==0.2.6
+langchain-redis==0.1.1
 langchain-text-splitters
 langsmith
 
